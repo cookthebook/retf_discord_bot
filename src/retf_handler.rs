@@ -42,6 +42,8 @@ impl EventHandler for RetfHandler {
                 resp = self.box_me(
                     "Back in my day, we had to use printable characters!"
                 );
+            } else if &msg.content[self.prefix.len() + 1..] == "info" {
+                resp = self.box_me("I am RETF bot version 0.0.1");
             } else {
                 resp = self.box_me(&msg.content[self.prefix.len() + 1..]);
             }
